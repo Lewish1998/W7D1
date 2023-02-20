@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 function App() {
 
   const [toDoList, setTodo] = useState([
+    {name: 'Add Priority', priority: 'low', completed: false}
   ])
 
 
@@ -22,8 +23,9 @@ function App() {
   const toDoNodes = toDoList.map((todo, index) => {
     return (
       <li key={index}>{todo.name}
+      <p>{todo.priority}</p>
       {todo.completed ? <span>Completed!</span> :
-      <button onClick={()=>completeToDo(index)}>Complete</button>}</li> // REMEBER TO ADD BUTTON FUNCTION
+      <button onClick={()=>completeToDo(index)}>Complete</button>}</li> 
     )
   })
 
@@ -33,10 +35,11 @@ function App() {
   }
 
 
+
   const saveNewToDO = (event) => {
     event.preventDefault()
     const copyToDo = [...toDoList];
-    copyToDo.push({name:newToDo, completed:false})
+    copyToDo.push({name:newToDo, priority:newToDo.priority, completed:false})
     setTodo(copyToDo)
     setNewToDo('')
   }
@@ -45,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 htmlId='heading'>ToDo List</h1>
+      <h1 id='heading'>ToDo List</h1>
       <ul>
 
       </ul>
@@ -53,7 +56,15 @@ function App() {
 
     <form onSubmit={saveNewToDO}>
       <label htmlFor='new-todo'>Add new ToDo:</label>
-      <input id='new-todo' type='text' value={newToDo} onChange={handleToDoInput}/>
+      <input id='new-todo' type='text' value={newToDo} onChange={handleToDoInput} required/>
+
+      <div id='priority'>
+        <label>Priority </label>
+        <label for='high'>High</label>
+        <input type='radio' name='priority' id='high' value='high' required/>
+        <label for='high'>low</label>
+        <input type='radio' name='priority' id='low' value='low' required/>
+      </div>
       <input type='submit' value='Save New ToDo'></input>
     </form>
 

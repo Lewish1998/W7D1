@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: rgb(45, 45, 45);
+  color: white;
+}
+
+#heading {
+  color:cadetblue;
+  text-decoration: underline solid 2px;
+}
