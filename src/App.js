@@ -23,8 +23,8 @@ function App() {
 
   const toDoNodes = toDoList.map((todo, index) => {
     return (
-      <li id='list-item' key={index}>{todo.name}
-      <p>{todo.priority}</p>
+      <li id='list-item' key={index}>{todo.name}<br></br>
+      {todo.priority==='High' ? <span className='high'>{todo.priority}</span> : <span className='low'>{todo.priority}</span>}<br></br>
       {todo.completed ? <span>Completed!</span> :
       <button onClick={()=>completeToDo(index)} htmlId='complete-button'>Complete</button>}</li> 
     )
@@ -57,10 +57,10 @@ function App() {
   return (
     <div className="App">
       <h1 id='heading'>ToDo List</h1>
-      <ul>
+      <ul id='todo-size'>
         <div id='todo'>
-      {toDoNodes}
-      </div>
+          {toDoNodes}
+        </div>
       </ul>
 
     <form id='form' onSubmit={saveNewToDO}>

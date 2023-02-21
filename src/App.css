@@ -83,3 +83,17 @@ body {
   border: solid 1px;
   margin: 10px;
 }
+
+#todo-size {
+  display: flex;
+  justify-content: center;
+}
+
+
+.high {
+  color:red;
+}
+
+.low {
+  color:green;
+}
