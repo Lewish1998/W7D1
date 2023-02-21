@@ -46,3 +46,40 @@ body {
   color:cadetblue;
   text-decoration: underline solid 2px;
 }
+
+#form {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+#form-box {
+  border: solid 3px; 
+  padding: 10px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#priority {
+  padding:10px
+}
+
+#todo {
+  list-style: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: solid 5px;
+}
+
+#complete-button {
+  padding: 50px;
+}
+
+#list-item {
+  padding:10px;
+  border: solid 1px;
+  margin: 10px;
+}
